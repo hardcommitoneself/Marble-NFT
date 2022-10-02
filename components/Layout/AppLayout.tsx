@@ -1,16 +1,16 @@
 //import styled from 'styled-components'
-import styled from 'styled-components'
-import { NavigationSidebar } from './NavigationSidebar'
-import { FooterBar } from './FooterBar'
-import { useEffect, useState } from 'react';
-import TagManager from 'react-gtm-module'
-import { APP_NAME } from '../../util/constants'
-import { Text } from '../Text'
-import { Button } from '../Button'
+import styled from "styled-components";
+import { NavigationSidebar } from "./NavigationSidebar";
+import { FooterBar } from "./FooterBar";
+import { useEffect, useState } from "react";
+import TagManager from "react-gtm-module";
+import { APP_NAME } from "../../util/constants";
+import { Text } from "../Text";
+import { Button } from "../Button";
 
 const tagManagerArgs = {
-    gtmId: process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID
-}
+  gtmId: process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID,
+};
 
 //TagManager.initialize(tagManagerArgs)
 
@@ -18,7 +18,7 @@ export const AppLayout = ({
   footerBar = <FooterBar />,
   children,
   fullWidth,
-  hasBanner = false
+  hasBanner = false,
 }) => {
   const [openNav, setOpenNav] = useState(false);
 
@@ -47,8 +47,8 @@ export const AppLayout = ({
         <NavigationSidebar openNav={openNav} setOpenNav={setOpenNav} />
 
         <div
-          className={`main-section ${fullWidth ? 'fullWidth' : ''} ${
-            hasBanner ? 'hasBanner' : ''
+          className={`main-section ${fullWidth ? "fullWidth" : ""} ${
+            hasBanner ? "hasBanner" : ""
           }`}
         >
           <StyledContainer hasBanner={hasBanner}>
@@ -56,15 +56,15 @@ export const AppLayout = ({
           </StyledContainer>
         </div>
 
-        {/* <StyledFooter className="footer">
+        <StyledFooter className="footer">
           <StyledFooterWrapper className="container">
             <StyledContainer>{footerBar}</StyledContainer>
           </StyledFooterWrapper>
-        </StyledFooter> */}
+        </StyledFooter>
       </StyledWrapper>
     </>
-  )
-}
+  );
+};
 
 // const StyledWrapper = styled('div', {
 //   display: 'block',
@@ -137,13 +137,13 @@ export const AppLayout = ({
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-image: url('/images/background.jpg');
+  background-image: url("/images/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   color: white;
-`
+`;
 
 const StyledContainer = styled.div<{ hasBanner: boolean }>`
   position: relative;
@@ -151,7 +151,7 @@ const StyledContainer = styled.div<{ hasBanner: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`
+`;
 
 const StyledFooter = styled.div`
   position: relative;
@@ -161,7 +161,7 @@ const StyledFooter = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 40px 0 0 0;
-`
+`;
 
 const StyledFooterWrapper = styled.div`
   position: relative;
@@ -169,4 +169,4 @@ const StyledFooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`
+`;
