@@ -7,9 +7,7 @@ import { useState } from "react";
 import { useConnectWallet } from '../hooks/useConnectWallet'
 import { useRecoilState } from 'recoil'
 import { walletState, WalletStatusType } from '../state/atoms/walletAtoms'
-import { SdkProvider } from "services/nft/client/wallet"
-import { config } from "services/config";
-
+import HomePage from  "../features/home";
 
 export default function Home() {
   const [fullWidth, setFullWidth] = useState(true);
@@ -25,15 +23,10 @@ export default function Home() {
   }
   return (
     <AppLayout fullWidth={fullWidth}>
-      <SdkProvider config={config}>
-      <PageHeader
-        title="Collections"
-        subtitle="The Marble Marketplace is the bridge the physical and digital world."
-      />
-      <Container className="middle mauto">
-        <Explore/>
-      </Container>
-      </SdkProvider>
+        <Container className="middle mauto">
+          {/* <Explore/> */}
+          <HomePage />
+        </Container>
     </AppLayout>
   )
 }

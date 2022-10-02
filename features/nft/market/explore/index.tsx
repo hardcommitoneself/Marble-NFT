@@ -76,42 +76,42 @@ export const Explore = () => {
 
   return (
     <ExploreWrapper>
-    <CategoryTab categories={nftcategories} activeCategoryId={activeCategoryId} setActiveCategoryId={setActiveCategoryId}/>
-    
-    <NftCollectionTable collections={nftcollections} activeCategoryId={activeCategoryId} />
+      <CategoryTab categories={nftcategories} activeCategoryId={activeCategoryId} setActiveCategoryId={setActiveCategoryId}/>
+      
+      {/* <NftCollectionTable collections={nftcollections} activeCategoryId={activeCategoryId} /> */}
     </ExploreWrapper>
   );
 }
 
 
 const ExploreWrapper = styled('div', {
-  ' .category-menus':{
+  ' .category-menus': {
     borderBottom: '1px solid $borderColors$default',
     display: 'flex',
     justifyContent: 'space-between',
     overFlow: 'hidden',
     '&.desktop-section': {
-      ' >span':{
+      ' >span': {
         minWidth: '8%',
         textAlign: 'center',
         paddingBottom: '$8',
         cursor: 'pointer',
-        '&.active':{
+        '&.active': {
           borderBottom: '4px solid $selected',
-        }
-      }
+        },
+      },
     },
     '&.mobile-section': {
-      ' >span':{
+      ' >span': {
         minWidth: '18%',
         textAlign: 'center',
         paddingBottom: '$8',
         cursor: 'pointer',
-        '&.active':{
+        '&.active': {
           borderBottom: '4px solid $selected',
-        }
-      }
+        },
+      },
     },
-  }
+  },
 })
 

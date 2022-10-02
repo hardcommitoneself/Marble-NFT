@@ -46,7 +46,7 @@ export const AppLayout = ({
       <StyledWrapper>
         <NavigationSidebar openNav={openNav} setOpenNav={setOpenNav} />
 
-        {/* <div
+        <div
           className={`main-section ${fullWidth ? 'fullWidth' : ''} ${
             hasBanner ? 'hasBanner' : ''
           }`}
@@ -56,7 +56,7 @@ export const AppLayout = ({
           </StyledContainer>
         </div>
 
-        <StyledFooter className="footer">
+        {/* <StyledFooter className="footer">
           <StyledFooterWrapper className="container">
             <StyledContainer>{footerBar}</StyledContainer>
           </StyledFooterWrapper>

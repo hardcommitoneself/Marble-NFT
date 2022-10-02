@@ -5,6 +5,7 @@ import 'focus-visible'
 
 import type { AppProps } from 'next/app'
 import { RecoilRoot } from 'recoil'
+import { ChakraProvider } from '@chakra-ui/react'
 import { ErrorBoundary } from 'components/ErrorBoundary'
 import { QueryClientProvider } from 'react-query'
 import { Portal } from '@reach/portal'
@@ -12,6 +13,8 @@ import { ToastContainer } from 'react-toastify'
 import { TestnetDialog } from 'components/TestnetDialog'
 import { queryClient } from 'services/queryClient'
 import { __TEST_MODE__ } from '../util/constants'
+import { SdkProvider } from "services/nft/client/wallet"
+import { config } from "services/config";
 
 import { wrapper, store } from "../store/store";
 import { Provider } from "react-redux";
@@ -29,27 +32,31 @@ function MyApp({ Component, pageProps }: AppProps) {
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
         <SafeHydrate>
-          <ErrorBoundary>
-            <Provider store={store}>
-              <Component {...pageProps} />
-              {__TEST_MODE__ && <TestnetDialog />}
-              <Portal>
-                <ToastContainer
-                  position="top-right"
-                  autoClose={5000}
-                  hideProgressBar={true}
-                  newestOnTop
-                  closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss
-                  draggable
-                  pauseOnHover
-                  toastStyle={{ zIndex: 150 }}
-                  style={{ width: 'auto' }}
-                />
-              </Portal>
-            </Provider>
-          </ErrorBoundary>
+          <ChakraProvider>
+            <SdkProvider config={config}>
+              <ErrorBoundary>
+                <Provider store={store}>
+                  <Component {...pageProps} />
+                  {__TEST_MODE__ && <TestnetDialog />}
+                  <Portal>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={true}
+                      newestOnTop
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      toastStyle={{ zIndex: 150 }}
+                      style={{ width: 'auto' }}
+                    />
+                  </Portal>
+                </Provider>
+              </ErrorBoundary>
+            </SdkProvider>
+          </ChakraProvider>
         </SafeHydrate>
       </QueryClientProvider>
     </RecoilRoot>

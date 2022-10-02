@@ -11,9 +11,13 @@ import { useRecoilState } from 'recoil'
 import { walletState, WalletStatusType } from '../../state/atoms/walletAtoms'
 import { useRouter } from 'next/router'
 import { isMobile } from 'util/device'
+import { RoundedIcon, RoundedIconComponent } from 'components/RoundedIcon'
+import { default_image } from '../../util/constants'
+
 import {
   Search,
   User,
+  RoundedLeft,
   UpRightArrow,
   ArrowDown,
   Exchange,
@@ -392,7 +396,99 @@ export function NavigationSidebar({ openNav ,setOpenNav }) {
                     </a>
                   </Link>
                 </StyledLink>
+
+                <StyledLink>
+                  <Link href="/explore" passHref>
+                    <a className="dropdown-item">
+                      <span className={isActive('/explore')}>Browse</span>
+                    </a>
+                  </Link>
+                </StyledLink>
+
+                <StyledLink>
+                  <a
+                    className="dropdown-item"
+                    href="https://near.marbledao.finance/"
+                    target="__blank"
+                  >
+                    <span className={isActive('/defi')}>DeFi</span>
+                  </a>
+                </StyledLink>
               </StyledListForLinks>
+
+              <ButtonField>
+                {
+                  Boolean(key?.name) ? (
+                    <Menu>
+                      <MenuButton
+                        borderRadius="50%"
+                        border="3px solid rgba(255, 255, 255, 0.2)"
+                      >
+                        <RoundedIcon
+                          size="36px"
+                          src={default_image}
+                        />
+                      </MenuButton>
+                      <StyledMenuList>
+                        <Link href={`/profile/${key?.name}`}>
+                          <ProfileMenuItem>
+                            <Flex>
+                              <RoundedIconComponent
+                                size="58px"
+                                address={key?.name}
+                              />
+                            </Flex>
+                            <RoundedLeft />
+                          </ProfileMenuItem>
+                        </Link>
+                        <StyledMenuItem>
+                          <VFlex>
+                            <p>Wallet Balance</p>
+                            <h1>{99.99} BLOCK</h1>
+                          </VFlex>
+                          <AddressWrapper>
+                            <p>{key?.name}</p>&nbsp;
+                            <GreenRound />
+                          </AddressWrapper>
+                        </StyledMenuItem>
+                        <StyledMenuItem>
+                          <Flex>
+                            {/* <Setting /> */}
+                            &nbsp; Settings
+                          </Flex>
+                          <RoundedLeft />
+                        </StyledMenuItem>
+                        <StyledMenuItem>
+                          <Flex>
+                            {/* <Help /> */}
+                            &nbsp; Help
+                          </Flex>
+                          <RoundedLeft />
+                        </StyledMenuItem>
+                        <StyledMenuItem onClick={() => undefined}>
+                          <Flex>
+                            {/* <Disconnect /> */}
+                            &nbsp; Disconnect
+                          </Flex>
+                          <RoundedLeft />
+                        </StyledMenuItem>
+                      </StyledMenuList>
+                    </Menu>
+                  ) : (
+                    <ConnectedWalletButton
+                      connected={!!key?.name}
+                      walletName={key?.name}
+                      onConnect={() => undefined}
+                      onDisconnect={() => undefined}
+                    />
+                  )
+                }
+                {key?.name && (
+                  <Link href="/create">
+                    <CreateButton>Create</CreateButton>
+                  </Link>
+                )}
+              </ButtonField>
             </StyledMenuContainer>
           </StyledWrapper>
         )
