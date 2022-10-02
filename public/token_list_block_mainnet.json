@@ -1,146 +1,162 @@
 {
-  "name": "Marble Token List",
+  "name": "Hera Token List",
   "logoURI": "",
-  "keywords": ["special tokens"],
+  "keywords": [
+    "special tokens"
+  ],
   "tags": {
-    "Marble": {
-      "name": "Marble",
-      "description": "Tokens that are listed on Marble"
+    "Hera": {
+      "name": "Hera",
+      "description": "Tokens that are listed on Hera"
     }
   },
   "timestamp": "2022-01-12T00:00:00+00:00",
   "base_token": {
-      "id": "juno-network",
-      "pool_id": "BLOCK+BLOCK",
-      "chain_id": "juno-1",
-      "token_address": "juno1y9rf7ql6ffwkv02hsgd4yruz23pn4w97p75e2slsnkm0mnamhzysvqnxaq",
-      "swap_address": "juno1xf32js0lc6v7quxj5twuna97hwff7dhkz6psujavvknh2yzty5uq6wut8j",
-      "symbol": "BLOCK",
-      "name": "Block",
-      "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/MarbleDAO/brand-assets/main/block.png",
-      "tags": ["cw20"],
-      "native":false,
-      "denom":"block"
-    },
- "native_token": {
-    "id": "juno-network",
-    "pool_id": "JUNO+JUNO",
-    "chain_id": "juno-1",
-    "token_address": "",
-    "swap_address": "",
-    "symbol": "JUNO",
-    "name": "Juno",
-    "decimals": 6,
-    "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
-    "tags": [
-      "native"
-    ],
-    "native": true,
-    "denom": "ujuno"
+    "id": "near-network",
+    "token_address": "hera.cmdev0.testnet",
+    "symbol": "NEAR",
+    "name": "NEAR",
+    "decimals": 24,
+    "logoURI": "https://raw.githubusercontent.com/MarbleDAO/brand-assets/main/block.png"
   },
-
+  "native_token": {
+    "id": "near",
+    "token_address": "",
+    "symbol": "NEAR",
+    "name": "NEAR",
+    "decimals": 24,
+    "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
+  },
+  "wrap_token": {
+    "id": "wnear",
+    "token_address": "wrap.testnet",
+    "symbol": "wNEAR",
+    "name": "Wrap Near",
+    "decimals": 24,
+    "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
+  },
+  "pools": [
+    {
+      "id": "near-network",
+      "pool_id": 0,
+      "token_id": ":0",
+      "token_address": [
+        "hera.cmdev0.testnet",
+        "dust.cmdev0.testnet"
+      ],
+      "symbol": "HERA-DUST",
+      "name": "HERA-DUST",
+      "decimals": 24,
+      "fee": 25,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
+    },
+    {
+      "id": "near-network",
+      "pool_id": 3,
+      "token_id": ":3",
+      "token_address": [
+        "dust.cmdev0.testnet",
+        "wrap.testnet"
+      ],
+      "symbol": "DUST-WNEAR",
+      "name": "DUST-WNEAR",
+      "decimals": 24,
+      "fee": 20,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
+    },
+    {
+      "id": "near-network",
+      "pool_id": 4,
+      "token_id": ":4",
+      "token_address": [
+        "hera.cmdev0.testnet",
+        "wrap.testnet"
+      ],
+      "symbol": "HERA-WNEAR",
+      "name": "HERA-WNEAR",
+      "decimals": 24,
+      "fee": 20,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
+    },
+    {
+      "id": "near-network",
+      "pool_id": 5,
+      "token_id": ":5",
+      "token_address": [
+        "test.cmdev0.testnet",
+        "wrap.testnet"
+      ],
+      "symbol": "TREGO-WNEAR",
+      "name": "TREGO-WNEAR",
+      "decimals": 24,
+      "fee": 20,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
+    },
+    {
+      "id": "near-network",
+      "pool_id": 6,
+      "token_id": ":6",
+      "token_address": [
+        "hera.cmdev0.testnet",
+        "usdn.testnet"
+      ],
+      "symbol": "HERA-USDN",
+      "name": "HERA-USDN",
+      "decimals": 24,
+      "fee": 25,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
+    }
+  ],
   "tokens": [
     {
-        "id": "juno-network",
-        "pool_id": "BLOCK+BLOCK",
-        "chain_id": "juno-1",
-        "token_address": "juno1y9rf7ql6ffwkv02hsgd4yruz23pn4w97p75e2slsnkm0mnamhzysvqnxaq",
-        "swap_address": "",
-        "symbol": "BLOCK",
-        "name": "Block",
-        "decimals": 6,
-        "logoURI": "https://raw.githubusercontent.com/MarbleDAO/brand-assets/main/block.png",
-        "tags": ["cw20"],
-        "native":false,
-        "denom":"block"
-    },
-    {
-      "id": "marble",
-      "pool_id": "BLOCK-MARBLE",
-      "chain_id": "juno-1",
-      "token_address": "juno1g2g7ucurum66d42g8k5twk34yegdq8c82858gz0tq2fc75zy7khssgnhjl",
-      "swap_address": "juno180jzqh7vefwuks6eyvf0lkecdl2mp8u08d844245faunja969p3s8w3t3q",
-      "incentives_address": "juno17tl4zhg98j8elgtwk580hqul0lk5q7gtamd3vlwjht70cjx2ssfs6vwusy",
-      "symbol": "MARBLE",
-      "name": "Marble",
-      "decimals": 3,
-      "logoURI": "https://raw.githubusercontent.com/MarbleDAO/brand-assets/main/marble.png",
-      "tags": ["cw20"],
-      "native":false,
-      "denom":"marble"
-    },
-    {
-      "id": "juno-network",
-      "pool_id": "BLOCK-JUNO",
-      "chain_id": "juno-1",
-      "token_address": "juno1y9rf7ql6ffwkv02hsgd4yruz23pn4w97p75e2slsnkm0mnamhzysvqnxaq",
-      "incentives_address": "juno1jkxqwxazm93nd7mgkavr46k8fyadpmlk4snf2r8kn7dn3jdw8a2sgzxupc",
-      "swap_address": "juno1xf32js0lc6v7quxj5twuna97hwff7dhkz6psujavvknh2yzty5uq6wut8j",
-      "symbol": "JUNO",
-      "name": "Juno",
-      "decimals": 6,
+      "id": "hera",
+      "token_address": "hera.cmdev0.testnet",
+      "symbol": "HERA",
+      "name": "HERA",
+      "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
-      "tags": ["native"],
-      "native": true,
-      "denom": "ujuno"
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
     },
     {
-      "id": "cosmos",
-      "pool_id": "BLOCK-ATOM",
-      "chain_id": "juno-1",
-      "token_address": "",
-      "swap_address": "juno1nljy8gst5agtc0zstfjytf2hrnj8vcxgcdzrp4qj7k2dcnrfz4wsu6ty4f",
-      "incentives_address": "juno1ac82jwnmfx7fqehac3ufwk7ve9juagsrk9umyduqzuwh9n7qjnesxe88k9",
-      "symbol": "ATOM",
-      "name": "Atom",
-      "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/atom.png",
-      "tags": ["native"],
-      "native": true,
-      "denom": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
+      "id": "dust",
+      "token_address": "dust.cmdev0.testnet",
+      "symbol": "DUST",
+      "name": "DUST",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
     },
     {
-      "id": "osmosis",
-      "pool_id": "BLOCK-OSMO",
-      "chain_id": "juno-1",
-      "token_address": "",
-      "swap_address": "",
-      "symbol": "OSMO",
-      "name": "OSMO",
-      "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/osmo.png",
-      "tags": ["native"],
-      "native":true,
-      "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518"
+      "id": "trego",
+      "token_address": "test.cmdev0.testnet",
+      "symbol": "TREGO",
+      "name": "TREGO",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
     },
     {
-      "id": "secret",
-      "pool_id": "BLOCK-SCRT",
-      "chain_id": "secret-4",
-      "token_address": "",
-      "swap_address": "",
-      "symbol": "SCRT",
-      "name": "SCRT",
-      "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/scrt.png",
-      "tags": ["native"],
-      "native":true,
-      "denom":"ibc/B55B08EF3667B0C6F029C2CC9CAA6B00788CF639EBB84B34818C85CBABA33ABD"
+      "id": "wnear",
+      "token_address": "wrap.testnet",
+      "symbol": "wNEAR",
+      "name": "Wrapped Near",
+      "decimals": 24,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
     },
     {
-      "id": "neta",
-      "pool_id": "BLOCK-NETA",
-      "chain_id": "juno-1",
-      "token_address": "",
-      "swap_address": "",
-      "symbol": "NETA",
-      "name": "NETA",
-      "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/cosmoscontracts/junoswap-asset-list/main/images/neta.png",
-      "tags": ["cw20"],
-      "native":false,
-      "denom":"neta"
+      "id": "usdn",
+      "token_address": "usdn.testnet",
+      "symbol": "USDN",
+      "name": "USN Token",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png",
+      "icon": "https://raw.githubusercontent.com/osmosis-labs/assetlists/main/images/juno.png"
     }
   ],
   "version": {
