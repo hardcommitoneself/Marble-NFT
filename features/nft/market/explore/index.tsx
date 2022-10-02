@@ -1,9 +1,7 @@
 import * as React from "react"
-import { useCallback, useEffect, useState } from "react";
-import Link from 'next/link'
-import { Button } from 'components/Button'
-import { styled } from 'components/theme'
-import useSWR from 'swr';
+import { useEffect, useState } from "react";
+import { Spinner } from "@chakra-ui/react";
+import { styled } from 'components/theme';
 
 
 import { CategoryTab, NftCollectionTable } from "components/NFT";
@@ -28,9 +26,7 @@ export const Explore = () => {
   )
   const [activeCategoryId, setActiveCategoryId] = useState(0)
   const { client } = useSdk()
-
-  console.log(client);
-  //const { address, client: signingClient } = useRecoilValue(walletState)
+  const [loading, setLoading] = useState(true)
   
   useEffect(() => {
     (async () => {
@@ -69,7 +65,7 @@ export const Explore = () => {
       }
       
       setNftCollections(collections)
-      
+      setLoading(false);
     })();
 
   }, [client])
@@ -79,6 +75,22 @@ export const Explore = () => {
       <CategoryTab categories={nftcategories} activeCategoryId={activeCategoryId} setActiveCategoryId={setActiveCategoryId}/>
       
       {/* <NftCollectionTable collections={nftcollections} activeCategoryId={activeCategoryId} /> */}
+      {loading ? (
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100%',
+              padding: '20px',
+            }}
+          >
+            <Spinner size="xl" />
+          </div>
+      ) : (
+        <NftCollectionTable collections={nftcollections} activeCategoryId={activeCategoryId} />
+      )}
     </ExploreWrapper>
   );
 }
