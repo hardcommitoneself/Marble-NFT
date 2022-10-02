@@ -1,0 +1,28 @@
+{
+  "tokens": [
+    {
+      "name": "Block",
+      "symbol": "BLOCK",
+      "logoUri": "/tokens/block.png",
+      "denom": "block",
+      "address": "juno1y9rf7ql6ffwkv02hsgd4yruz23pn4w97p75e2slsnkm0mnamhzysvqnxaq",
+      "type": "cw20"
+    },
+    {
+      "name": "Marble",
+      "symbol": "MARBLE",
+      "logoUri": "/tokens/marble.png",
+      "denom": "marble",
+      "address": "juno1g2g7ucurum66d42g8k5twk34yegdq8c82858gz0tq2fc75zy7khssgnhjl",
+      "type": "cw20"
+    },
+    {
+      "name": "Juno",
+      "symbol": "JUNO",
+      "logoUri": "/tokens/juno.png",
+      "denom": "ujuno",
+      "address": "ujuno",
+      "type": "native"
+    }
+  ]
+}
